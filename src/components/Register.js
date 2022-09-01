@@ -1,6 +1,7 @@
 import React from "react";
 import { useFormik } from "formik";
 import axios from "axios";
+import Header from "./front/Header/Header";
 
 function Register() {
   const initialValues = {
@@ -47,7 +48,9 @@ function Register() {
   });
 
   return (
+   
     <div>
+      <Header/>
       <h2>Register</h2>
       <form onSubmit={formik.handleSubmit}>
         <input

@@ -6,6 +6,11 @@ import Register from './components/Register';
 import { Route, Routes } from 'react-router-dom';
 import {useState, useEffect} from 'react'
 import Dashboard from './components/Dashboard';
+// cart start
+// import data from "./components/back/Data/Data";
+// import Header from "./components/front/Header/Header";
+// cart end
+
 
 
 // registration start...
@@ -20,14 +25,13 @@ function App() {
   }, [])
   return (
     <div className="App">
-      <h1>App</h1>
-      <Routes> 
-        <Route path='*' element={isLoggedIn ? 
-        <Dashboard /> : <Login logFunction={loginUser}/>} />
-        <Route path='/register' element={<Register />} />
+      <h1> </h1>
+      <Routes>
+        <Route path="*" element={<Dashboard />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </div>
-   
   );
 
 }

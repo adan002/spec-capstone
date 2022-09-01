@@ -1,9 +1,10 @@
 import React from "react";
 import { useFormik } from "formik";
-import {Button} from 'bootstrap'
-import {ButtonGroup} from 'react-bootstrap'
+// import {Button} from 'bootstrap'
+// import {ButtonGroup} from 'react-bootstrap'
 import axios from 'axios'
 import {useNavigate} from 'react-router-dom';
+import Header from "./front/Header/Header";
 
 
 function Login (props) {
@@ -19,7 +20,7 @@ function Login (props) {
       localStorage.setItem("name", res.data.name);
       localStorage.setItem("username", res.data.username);
       props.logFunction()
-      navigate('/secret')
+      navigate('/Header')
     })
     .catch((err) => {
       console.log(err.response.data)
@@ -44,7 +45,9 @@ function Login (props) {
 
   return (
     <div>
+      <Header />
       <h2>Login Page</h2>
+      
       <form onSubmit={formik.handleSubmit}>
         <input
           type="text"
